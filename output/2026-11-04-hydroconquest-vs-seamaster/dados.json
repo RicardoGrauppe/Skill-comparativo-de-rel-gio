@@ -1,0 +1,267 @@
+{
+  "slug": "hydroconquest-vs-seamaster",
+  "a": {
+    "marca": "Longines",
+    "modelo": "HydroConquest 39 mm",
+    "ref": "L3.779.4.70.6",
+    "mm": 39,
+    "preco_num": 2400,
+    "foto": {
+      "src": "https://api.ecom.longines.com/media/catalog/product/w/a/watch-collection-hydroconquest-l3-779-4-70-6-360a7a-hero.png?w=2000",
+      "cx": 0.5,
+      "cy": 0.422,
+      "d": 0.4
+    },
+    "censura": [
+      {
+        "l": 44.5,
+        "t": 34,
+        "w": 10.5,
+        "h": 3.2
+      },
+      {
+        "l": 43.5,
+        "t": 46.6,
+        "w": 12.5,
+        "h": 2.8
+      }
+    ]
+  },
+  "b": {
+    "marca": "Omega",
+    "modelo": "Seamaster Diver 300M",
+    "ref": "210.30.42.20.01.010",
+    "mm": 42,
+    "preco_num": 7300,
+    "foto": {
+      "src": "https://www.omegawatches.com/media/catalog/product/o/m/omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001010-b82f49.png",
+      "cx": 0.495,
+      "cy": 0.452,
+      "d": 0.5
+    },
+    "censura": [
+      {
+        "l": 45,
+        "t": 34.6,
+        "w": 9.6,
+        "h": 4.2
+      },
+      {
+        "l": 45.6,
+        "t": 38.8,
+        "w": 8.4,
+        "h": 3.4
+      }
+    ]
+  },
+  "textos": {
+    "pt": {
+      "preco": {
+        "a": "US$ 2.400",
+        "b": "US$ 7.300"
+      },
+      "pagina1": {
+        "titulo": "Os dois resistem a 300 m.",
+        "linha2": "Por que um custa US$ 4.900 a mais?"
+      },
+      "pagina2": {
+        "titulo": "O que os US$ 4.900 pagam?",
+        "subtitulo": "Longines HydroConquest 39 mm vs Omega Seamaster Diver 300M",
+        "em_comum": [
+          "Caixa de aço",
+          "Automático",
+          "300 m de resistência",
+          "Cristal de safira"
+        ],
+        "diferencas": [
+          {
+            "nome": "Preço",
+            "a": "US$ 2.400",
+            "b": "US$ 7.300",
+            "vence": "a"
+          },
+          {
+            "nome": "Diâmetro",
+            "a": "39 mm",
+            "b": "42 mm"
+          },
+          {
+            "nome": "Espessura",
+            "a": "~12 mm",
+            "b": "13,8 mm",
+            "vence": "a"
+          },
+          {
+            "nome": "Reserva de marcha",
+            "a": "72 horas",
+            "b": "55 horas",
+            "vence": "a"
+          },
+          {
+            "nome": "Aro giratório",
+            "a": "Cerâmica",
+            "b": "Alumínio",
+            "vence": "a"
+          },
+          {
+            "nome": "Fundo da caixa",
+            "a": "Aço, rosqueado",
+            "b": "Safira, com exibição",
+            "vence": "b"
+          },
+          {
+            "nome": "Data",
+            "a": "Sim",
+            "b": "Não",
+            "vence": "a"
+          }
+        ],
+        "fechamento": "Mais barato, mais fino e com mais reserva de marcha. Qual você levaria?",
+        "rotulo_comum": "Em comum",
+        "rotulo_diferencas": "Principais diferenças"
+      },
+      "pagina3": {
+        "titulo": "Aqui a conta fica estranha.",
+        "subtitulo": "Os dois são do mesmo dono, o Swatch Group, e têm 5 anos de garantia.",
+        "surpresa_a": "Cerâmica",
+        "legenda_a": "O aro giratório do mais barato.",
+        "surpresa_b": "Alumínio",
+        "legenda_b": "O aro giratório do mais caro.",
+        "secao": "O que a Omega tem a mais",
+        "itens": [
+          {
+            "titulo": "Fundo de safira",
+            "texto": "Dá para ver a máquina funcionando."
+          },
+          {
+            "titulo": "Master Chronometer",
+            "texto": "Instituto suíço testa: de 0 a +6 segundos por dia."
+          },
+          {
+            "titulo": "Proteção contra ímãs",
+            "texto": "Certificado para até 15.000 gauss."
+          }
+        ],
+        "fechamento": "E agora, quanto vale essa diferença?"
+      },
+      "pagina4": {
+        "titulo": "Se tirássemos o nome do mostrador,",
+        "linha2": "qual você escolheria?",
+        "capa": "Deslize e descubra quem é quem.",
+        "tamanhos": [
+          51,
+          86.5
+        ]
+      },
+      "pagina5": {
+        "titulo": "E aí, depois de descobrir tudo isso,",
+        "linha2": "a sua opinião ainda continua a mesma?",
+        "botao": "Comenta aqui: A ou B"
+      }
+    },
+    "en": {
+      "preco": {
+        "a": "$2,400",
+        "b": "$7,300"
+      },
+      "pagina1": {
+        "titulo": "Both are water resistant to 300 m.",
+        "linha2": "Why does one cost $4,900 more?"
+      },
+      "pagina2": {
+        "titulo": "What does $4,900 more buy?",
+        "subtitulo": "Longines HydroConquest 39 mm vs Omega Seamaster Diver 300M",
+        "rotulo_comum": "In common",
+        "rotulo_diferencas": "Key differences",
+        "em_comum": [
+          "Steel case",
+          "Automatic",
+          "300 m water resistance",
+          "Sapphire crystal"
+        ],
+        "diferencas": [
+          {
+            "nome": "Price",
+            "a": "$2,400",
+            "b": "$7,300",
+            "vence": "a"
+          },
+          {
+            "nome": "Diameter",
+            "a": "39 mm",
+            "b": "42 mm"
+          },
+          {
+            "nome": "Thickness",
+            "a": "~12 mm",
+            "b": "13.8 mm",
+            "vence": "a"
+          },
+          {
+            "nome": "Power reserve",
+            "a": "72 hours",
+            "b": "55 hours",
+            "vence": "a"
+          },
+          {
+            "nome": "Rotating bezel",
+            "a": "Ceramic",
+            "b": "Aluminum",
+            "vence": "a"
+          },
+          {
+            "nome": "Case back",
+            "a": "Steel, screw-down",
+            "b": "Sapphire, see-through",
+            "vence": "b"
+          },
+          {
+            "nome": "Date",
+            "a": "Yes",
+            "b": "No",
+            "vence": "a"
+          }
+        ],
+        "fechamento": "Cheaper, thinner and with more power reserve. Which would you buy?"
+      },
+      "pagina3": {
+        "titulo": "This is where it gets weird.",
+        "subtitulo": "Both have the same owner, the Swatch Group, and a 5-year warranty.",
+        "surpresa_a": "Ceramic",
+        "legenda_a": "The rotating bezel on the cheaper one.",
+        "surpresa_b": "Aluminum",
+        "legenda_b": "The rotating bezel on the pricier one.",
+        "secao": "What the Omega has that the other doesn’t",
+        "itens": [
+          {
+            "titulo": "Sapphire case back",
+            "texto": "You can see the movement at work."
+          },
+          {
+            "titulo": "Master Chronometer",
+            "texto": "A Swiss institute tests it: 0 to +6 seconds a day."
+          },
+          {
+            "titulo": "Magnet protection",
+            "texto": "Certified up to 15,000 gauss."
+          }
+        ],
+        "fechamento": "So, how much is that difference worth?"
+      },
+      "pagina4": {
+        "titulo": "If we took the name off the dial,",
+        "linha2": "which would you choose?",
+        "capa": "Swipe to find out which is which.",
+        "tamanhos": [
+          57.9,
+          72.1
+        ]
+      },
+      "pagina5": {
+        "titulo": "So, after finding out all of this,",
+        "linha2": "is your opinion still the same?",
+        "botao": "Comment here: A or B"
+      }
+    }
+  }
+}

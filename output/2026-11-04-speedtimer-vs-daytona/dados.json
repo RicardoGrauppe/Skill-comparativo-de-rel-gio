@@ -1,0 +1,286 @@
+{
+  "slug": "speedtimer-vs-daytona",
+  "a": {
+    "marca": "Seiko",
+    "modelo": "Speedtimer 39 mm",
+    "ref": "SSC961",
+    "mm": 39,
+    "preco_num": 750,
+    "foto": {
+      "src": "assets/a.png",
+      "cx": 0.469,
+      "cy": 0.465,
+      "d": 0.552,
+      "src_oficial": "https://www.seikowatches.com/us-en/-/media/Images/Product--Image/All/Seiko/2025/12/18/21/16/SSC961P1/SSC961P1.png"
+    },
+    "censura": [
+      {
+        "l": 41.5,
+        "t": 35.6,
+        "w": 5.3,
+        "h": 3.0
+      },
+      {
+        "l": 47.3,
+        "t": 35.6,
+        "w": 5.7,
+        "h": 3.0
+      },
+      {
+        "l": 45.3,
+        "t": 39.0,
+        "w": 1.5,
+        "h": 3.0
+      },
+      {
+        "l": 47.3,
+        "t": 39.0,
+        "w": 1.3,
+        "h": 3.0
+      }
+    ]
+  },
+  "b": {
+    "marca": "Rolex",
+    "modelo": "Cosmograph Daytona 40 mm",
+    "ref": "126500LN",
+    "mm": 40,
+    "preco_num": 16900,
+    "foto": {
+      "src": "assets/b.png",
+      "cx": 0.5005,
+      "cy": 0.4985,
+      "d": 0.313,
+      "clip": "0 0,100% 0,100% 82.7%,0 82.7%",
+      "src_oficial": "https://media.rolex.com/image/upload/q_auto/f_png/c_pad,w_2400,h_2400,b_transparent/v1/a677b2c664f6/catalogue/2026/upright-c/m126500ln-0001"
+    },
+    "censura": [
+      {
+        "l": 46.4,
+        "t": 39.4,
+        "w": 7.2,
+        "h": 5.5
+      },
+      {
+        "l": 47.3,
+        "t": 44.9,
+        "w": 5.4,
+        "h": 1.5
+      },
+      {
+        "l": 47.9,
+        "t": 51.1,
+        "w": 4.3,
+        "h": 1.3
+      }
+    ]
+  },
+  "textos": {
+    "pt": {
+      "preco": {
+        "a": "US$ 750",
+        "b": "US$ 16.900"
+      },
+      "pagina1": {
+        "titulo": "Os dois resistem a 100 m.",
+        "linha2": "Por que um custa US$ 16.150 a mais?"
+      },
+      "pagina2": {
+        "titulo": "O que os US$ 16.150 pagam?",
+        "subtitulo": "Seiko Speedtimer 39 mm vs Rolex Daytona 40 mm",
+        "rotulo_comum": "Em comum",
+        "rotulo_diferencas": "Principais diferenças",
+        "em_comum": [
+          "Caixa de aço",
+          "Cronógrafo",
+          "Cristal de safira",
+          "100 m de resistência"
+        ],
+        "diferencas": [
+          {
+            "nome": "Preço",
+            "a": "US$ 750",
+            "b": "US$ 16.900",
+            "vence": "a"
+          },
+          {
+            "nome": "Movimento",
+            "a": "Solar",
+            "b": "Mecânico"
+          },
+          {
+            "nome": "Autonomia",
+            "a": "~6 meses",
+            "b": "~72 horas",
+            "vence": "a"
+          },
+          {
+            "nome": "Precisão",
+            "a": "~±0,5 s por dia",
+            "b": "±2 s por dia",
+            "vence": "a"
+          },
+          {
+            "nome": "Data",
+            "a": "Sim",
+            "b": "Não",
+            "vence": "a"
+          },
+          {
+            "nome": "Cronógrafo mede",
+            "a": "Até 60 minutos",
+            "b": "Até 12 horas",
+            "vence": "b"
+          },
+          {
+            "nome": "Diâmetro",
+            "a": "39 mm",
+            "b": "40 mm"
+          }
+        ],
+        "fechamento": "Mais barato, com data e mais autonomia. Qual você levaria?"
+      },
+      "pagina3": {
+        "titulo": "Aqui a conta fica estranha.",
+        "subtitulo": "Guardados com a carga cheia, um funciona por meses. O outro, por dias.",
+        "surpresa_a": "~6 meses",
+        "legenda_a": "Autonomia do mais barato, solar.",
+        "surpresa_b": "~72 horas",
+        "legenda_b": "Autonomia do mais caro, mecânico.",
+        "secao": "O que a Rolex tem a mais",
+        "itens": [
+          {
+            "titulo": "Mecânico",
+            "texto": "Dá corda com o movimento do braço. A Seiko carrega com luz."
+          },
+          {
+            "titulo": "Até 12 horas",
+            "texto": "É o que o cronógrafo mede. Na Seiko, até 60 minutos."
+          },
+          {
+            "titulo": "Aço próprio",
+            "texto": "Desenvolvido pela marca para resistir à corrosão."
+          }
+        ],
+        "fechamento": "E agora, quanto vale essa diferença?"
+      },
+      "pagina4": {
+        "titulo": "Se tirássemos o nome do mostrador,",
+        "linha2": "qual você escolheria?",
+        "capa": "Deslize e descubra quem é quem.",
+        "tamanhos": [
+          51,
+          86.5
+        ]
+      },
+      "pagina5": {
+        "titulo": "E aí, depois de descobrir tudo isso,",
+        "linha2": "a sua opinião ainda continua a mesma?",
+        "botao": "Comenta aqui: A ou B"
+      }
+    },
+    "en": {
+      "preco": {
+        "a": "$750",
+        "b": "$16,900"
+      },
+      "pagina1": {
+        "titulo": "Both are water resistant to 100 m.",
+        "linha2": "Why does one cost $16,150 more?"
+      },
+      "pagina2": {
+        "titulo": "What does $16,150 buy?",
+        "subtitulo": "Seiko Speedtimer 39 mm vs Rolex Daytona 40 mm",
+        "rotulo_comum": "In common",
+        "rotulo_diferencas": "Key differences",
+        "em_comum": [
+          "Steel case",
+          "Chronograph",
+          "Sapphire crystal",
+          "100 m water resistance"
+        ],
+        "diferencas": [
+          {
+            "nome": "Price",
+            "a": "$750",
+            "b": "$16,900",
+            "vence": "a"
+          },
+          {
+            "nome": "Movement",
+            "a": "Solar",
+            "b": "Mechanical"
+          },
+          {
+            "nome": "Run time",
+            "a": "~6 months",
+            "b": "~72 hours",
+            "vence": "a"
+          },
+          {
+            "nome": "Accuracy",
+            "a": "~±0.5 sec a day",
+            "b": "±2 sec a day",
+            "vence": "a"
+          },
+          {
+            "nome": "Date",
+            "a": "Yes",
+            "b": "No",
+            "vence": "a"
+          },
+          {
+            "nome": "Chronograph measures",
+            "a": "Up to 60 minutes",
+            "b": "Up to 12 hours",
+            "vence": "b"
+          },
+          {
+            "nome": "Diameter",
+            "a": "39 mm",
+            "b": "40 mm"
+          }
+        ],
+        "fechamento": "Cheaper, with a date and a longer run time. Which would you buy?"
+      },
+      "pagina3": {
+        "titulo": "This is where it gets weird.",
+        "subtitulo": "Put away at full power, one runs for months. The other, for days.",
+        "surpresa_a": "~6 months",
+        "legenda_a": "Run time on the cheaper, solar one.",
+        "surpresa_b": "~72 hours",
+        "legenda_b": "Run time on the pricier, mechanical one.",
+        "secao": "What the Rolex adds",
+        "itens": [
+          {
+            "titulo": "Mechanical",
+            "texto": "It winds with the motion of your arm. The Seiko charges with light."
+          },
+          {
+            "titulo": "Up to 12 hours",
+            "texto": "That’s what the chronograph measures. The Seiko stops at 60 minutes."
+          },
+          {
+            "titulo": "Its own steel",
+            "texto": "Developed by the brand to resist corrosion."
+          }
+        ],
+        "fechamento": "So, how much is that difference worth?"
+      },
+      "pagina4": {
+        "titulo": "If we took the name off the dial,",
+        "linha2": "which would you choose?",
+        "capa": "Swipe to find out which is which.",
+        "tamanhos": [
+          57.9,
+          72.1
+        ]
+      },
+      "pagina5": {
+        "titulo": "So, after finding out all of this,",
+        "linha2": "is your opinion still the same?",
+        "botao": "Comment here: A or B"
+      }
+    }
+  }
+}

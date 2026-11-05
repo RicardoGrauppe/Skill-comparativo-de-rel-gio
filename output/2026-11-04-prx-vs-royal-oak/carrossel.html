@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>prx-vs-royal-oak</title>
+<style>
+@font-face {
+  font-family: "Montserrat";
+  src: url("fonts/Montserrat.ttf") format("truetype");
+  font-weight: 100 900;
+}
+:root {
+  --navy: #21384f;
+  --ink: #242c36;
+  --muted: #66717d;
+  --page: #eceff2;
+  --light: #f4f5f7;
+  --mid: #e2e6ea;
+  --track: #d9dfe5;
+  --drawing: #8694a3;
+  --on-navy: #f4f5f7;
+  --on-navy-muted: #a9b6c3;
+  --display: "Montserrat", sans-serif;
+  --text: "Montserrat", sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #2a2d31; }
+#deck { display: grid; grid-template-columns: repeat(5, 1080px); gap: 32px; justify-content: center; padding: 32px; }
+
+.slide {
+  position: relative;
+  width: 1080px;
+  height: 1350px;
+  flex: none;
+  overflow: hidden;
+  background: var(--page);
+  font-family: var(--text);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+.slide > * { position: absolute; }
+
+.headline {
+  left: 64px;
+  top: 62px;
+  width: 952px;
+  text-align: center;
+  font-family: var(--display);
+  font-size: 56px;
+  line-height: 68px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: var(--navy);
+}
+.headline span { display: block; font-weight: 400; }
+
+.band { left: 0; top: 1210px; width: 100%; height: 140px; background: linear-gradient(180deg, #2a4560 0%, #1b2f44 100%); color: var(--on-navy); }
+.band > * { position: absolute; }
+
+/* Slide 1: os dois na mesma escala */
+.watch { display: block; filter: drop-shadow(1px 5px 6px rgba(40, 50, 60, .2)); }
+/* Profundidade em camadas: luz de palco, textura, volume nas superfícies e sobreposição */
+.s2 { background: linear-gradient(180deg, #e4e8ed 0%, #d9dfe5 100%); }
+.s2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1210px;
+  background:
+    radial-gradient(ellipse 620px 430px at 540px 370px, rgba(248, 249, 251, .95) 0%, rgba(248, 249, 251, .55) 48%, rgba(248, 249, 251, 0) 100%),
+    linear-gradient(180deg, rgba(205, 213, 222, .55) 0%, rgba(205, 213, 222, 0) 22%);
+}
+.s2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .05;
+  pointer-events: none;
+  z-index: 3;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.s2 .headline { top: 42px; font-size: 54px; line-height: 64px; }
+.s2 .subtitle {
+  left: 64px;
+  top: 110px;
+  width: 952px;
+  text-align: center;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: .6px;
+  color: var(--ink);
+}
+/* Mesma escala do slide 1, com os mostradores na mesma altura */
+.s2 .watch { filter: drop-shadow(0 2px 3px rgba(27, 47, 68, .16)) drop-shadow(0 16px 20px rgba(27, 47, 68, .12)); }
+.s2 .watch.l { left: 214px; top: 158px; width: 256px; }
+.s2 .watch.o { left: 621px; top: 152px; width: 279px; }
+.s2 .name {
+  top: 622px;
+  width: 320px;
+  margin-left: -160px;
+  text-align: center;
+  font-family: var(--display);
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 800;
+  letter-spacing: .6px;
+  color: var(--navy);
+}
+.s2 .name.l { left: 330px; }
+.s2 .name.o { left: 750px; }
+
+.section {
+  left: 64px;
+  width: 952px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-family: var(--display);
+  font-size: 30px;
+  line-height: 40px;
+  font-weight: 700;
+  color: var(--navy);
+  white-space: nowrap;
+}
+.section::before, .section::after { content: ""; flex: 1; height: 1px; }
+.section::before { background: linear-gradient(90deg, rgba(134, 148, 163, 0), var(--drawing)); }
+.section::after { background: linear-gradient(90deg, var(--drawing), rgba(134, 148, 163, 0)); }
+
+.chips { left: 64px; top: 720px; width: 952px; display: flex; gap: 10px; }
+.chip {
+  flex: 1 1 0;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #fafbfc 0%, #eef1f4 100%);
+  box-shadow: 0 1px 2px rgba(27, 47, 68, .08), 0 6px 12px rgba(27, 47, 68, .05);
+  text-align: center;
+  font-size: 18px;
+  line-height: 48px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* A tabela é uma folha que invade a faixa de baixo */
+.diffs-card {
+  left: 64px;
+  top: 842px;
+  width: 952px;
+  z-index: 2;
+  border-radius: 14px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #fafbfc 0%, #eff2f5 100%);
+  box-shadow: 0 1px 2px rgba(27, 47, 68, .1), 0 14px 28px rgba(27, 47, 68, .14);
+}
+.diffs {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 17px;
+}
+.diffs col.name-col { width: 240px; }
+.diffs th, .diffs td { height: var(--linha, 48px); padding: 0; text-align: center; vertical-align: middle; }
+.diffs thead tr { background: #243d55; }
+  .diffs thead th {
+  color: var(--on-navy);
+  font-family: var(--display);
+  font-size: 18px;
+  font-weight: 700;
+}
+.diffs tbody tr:nth-child(odd) { background: transparent; }
+.diffs tbody tr:nth-child(even) { background: rgba(33, 56, 79, .05); }
+.diffs td.win { font-weight: 700; color: var(--navy); }
+.diffs tbody th { text-align: left; padding-left: 22px; font-weight: 700; color: var(--navy); }
+
+.closing {
+  left: 64px;
+  top: 62px;
+  width: 952px;
+  text-align: center;
+  text-wrap: balance;
+  font-family: var(--display);
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 500;
+}
+
+/* Páginas 3 e 4 do modelo 1: mesmo palco claro da página 2 */
+.extra b { display: block; font-family: var(--display); font-weight: 700; color: var(--navy); }
+.extra span { display: block; }
+/* Relógio sem nome: as barras cobrem os textos do mostrador */
+.anon { aspect-ratio: 1; }
+.anon img { display: block; width: 100%; height: 100%; }
+.anon .bar { position: absolute; display: block; background: #0b0d10; border-radius: 3px; }
+
+.p4 .headline { top: 62px; font-size: 46px; line-height: 58px; }
+.p4 .anon.l { left: -172px; top: 218px; width: 905px; }
+.p4 .anon.o { left: 414px; top: 247px; width: 780px; }
+.pick { top: 1062px; width: 200px; margin-left: -100px; text-align: center; font-family: var(--display); font-size: 80px; line-height: 96px; font-weight: 800; color: var(--navy); }
+.pick.l { left: 280px; }
+.pick.o { left: 800px; }
+.band .closing { color: var(--on-navy); }
+
+/* Páginas 3 e 4 do modelo 2: estúdio escuro */
+.slide.dark { background: radial-gradient(ellipse 900px 800px at 50% 40%, #232d38 0%, #141a21 60%, #0c1014 100%); color: #e8ebef; }
+.dhead { left: 64px; top: 58px; width: 952px; text-align: center; font-family: var(--display); font-size: 54px; line-height: 64px; font-weight: 800; letter-spacing: -1px; color: #f1f3f5; }
+.dhead span { display: block; font-weight: 400; }
+.dsub { left: 64px; top: 126px; width: 952px; text-align: center; font-size: 20px; line-height: 28px; color: #b4bfca; }
+.strip { left: 0; width: 100%; height: 400px; overflow: hidden; -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 44px, #000 356px, transparent 100%); mask-image: linear-gradient(180deg, transparent 0, #000 44px, #000 356px, transparent 100%); }
+.strip img { position: absolute; display: block; filter: drop-shadow(0 22px 26px rgba(0, 0, 0, .45)); }
+.strip.s-l { top: 172px; }
+.strip.s-o { top: 572px; }
+.strip.s-l img { width: 1100px; height: 1100px; left: -280px; top: -264px; }
+.strip.s-o img { width: 880px; height: 880px; left: 374px; top: -198px; }
+.dmat { width: 440px; text-align: center; }
+.dmat.s-l { left: 576px; top: 300px; }
+.dmat.s-o { left: 64px; top: 700px; }
+.dmat b { display: block; font-family: var(--display); font-size: 66px; line-height: 76px; font-weight: 800; color: #f1f3f5; }
+.dmat span { display: block; font-size: 20px; line-height: 30px; color: #b4bfca; }
+.dsection { left: 64px; top: 988px; width: 952px; text-align: center; font-family: var(--display); font-size: 28px; line-height: 38px; font-weight: 700; color: #f1f3f5; }
+.dextras { left: 64px; top: 1042px; width: 952px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.dextras .extra { height: 140px; padding: 20px 18px 0; border-radius: 14px; text-align: center; background: linear-gradient(180deg, rgba(255, 255, 255, .09), rgba(255, 255, 255, .03)); box-shadow: 0 10px 22px rgba(0, 0, 0, .28); }
+.dextras .extra b { font-size: 21px; line-height: 30px; color: #f1f3f5; }
+.dextras .extra span { margin-top: 6px; font-size: 16px; line-height: 24px; color: #b4bfca; }
+.dclosing { left: 64px; top: 1226px; width: 952px; text-align: center; font-family: var(--display); font-size: 24px; line-height: 34px; font-weight: 500; color: #f1f3f5; }
+
+/* Modelo 3, páginas 2 a 4: editorial em marinho e champanhe */
+.ed { --champ: #c7a877; --champ-dark: #84652f; --champ-light: #e2cba4; background: #f1f3f5; }
+.ed-half { left: 0; width: 100%; }
+.ed-half.top { top: 0; height: 760px; background: radial-gradient(ellipse 760px 480px at 30% 62%, #fbfbfc 0%, #e9ecf0 62%, #dde2e7 100%); }
+.ed-half.bottom { top: 760px; height: 590px; background: radial-gradient(ellipse 760px 480px at 72% 50%, #33506d 0%, #21384f 58%, #17293b 100%); }
+.ed-title { left: 64px; top: 44px; width: 952px; text-align: center; font-family: var(--display); font-size: 44px; line-height: 56px; font-weight: 800; letter-spacing: -.8px; color: var(--navy); }
+.ed-title span { display: block; font-weight: 400; }
+.ed-lying { display: block; filter: drop-shadow(0 18px 18px rgba(16, 28, 40, .28)); }
+.ed-id, .ed-facts { width: 470px; text-align: center; }
+.ed-id .brand { font-family: var(--display); font-size: 42px; line-height: 50px; font-weight: 800; letter-spacing: 1px; }
+.ed-id .model { font-family: var(--display); font-size: 22px; line-height: 30px; }
+.ed-id .ref { font-size: 14px; line-height: 22px; opacity: .72; }
+.ed-facts { font-size: 24px; line-height: 34px; font-weight: 500; }
+.ed-id.a { left: 560px; top: 196px; color: var(--navy); }
+.ed-facts.a { left: 560px; top: 640px; color: var(--navy); }
+.ed-id.b { left: 50px; top: 790px; color: #f1f3f5; }
+.ed-facts.b { left: 50px; top: 1236px; color: #f1f3f5; }
+
+/* Modelo 4, página 5: chamada para ação */
+.ed-cta { background: radial-gradient(ellipse 860px 760px at 50% 45%, #33506d 0%, #21384f 56%, #16273a 100%); color: #f1f3f5; }
+.cta-title { left: 50px; top: 62px; width: 980px; text-align: center; font-family: var(--display); font-size: 42px; line-height: 56px; font-weight: 800; letter-spacing: -.6px; color: #f4f5f7; }
+.cta-title span { display: block; font-weight: 400; }
+.cta-watch { display: block; filter: drop-shadow(0 3px 4px rgba(6, 14, 22, .3)) drop-shadow(0 22px 26px rgba(6, 14, 22, .34)); }
+.cta-name { top: 1030px; width: 480px; margin-left: -240px; text-align: center; }
+.cta-name.a { left: 280px; }
+.cta-name.b { left: 800px; }
+.cta-name b { display: block; font-family: var(--display); font-size: 50px; line-height: 58px; font-weight: 800; color: #e2cba4; }
+.cta-name strong { display: block; font-family: var(--display); font-size: 48px; line-height: 58px; font-weight: 800; letter-spacing: 1px; white-space: nowrap; }
+.cta-button { display: flex; align-items: center; justify-content: center; gap: 14px; left: 240px; top: 1182px; width: 600px; height: 92px; border-radius: 46px; text-align: center; font-family: var(--display); font-size: 28px; line-height: 92px; font-weight: 700; color: #17293b; background: linear-gradient(180deg, #dcc398 0%, #b9976a 100%); box-shadow: 0 2px 4px rgba(6, 14, 22, .25), 0 14px 26px rgba(6, 14, 22, .28); }
+
+.cta-icon { display: block; width: 36px; height: 36px; flex: none; color: #17293b; }
+
+/* Capa: título em duas linhas na largura dos relógios, sem blocos de cor */
+.p4.capa .headline { left: 60px; top: 48px; width: 960px; font-size: 51px; line-height: 62px; letter-spacing: -1px; color: var(--navy); white-space: nowrap; }
+.p4.capa .headline span { font-size: 86.5px; line-height: 96px; font-weight: 800; letter-spacing: -1.5px; color: #84652f; }
+.p4.capa .pick { top: 1082px; font-size: 76px; line-height: 92px; }
+.p4.capa .pick.l { left: 255px; }
+.p4.capa .pick.o { left: 780px; }
+.p4.capa::before { height: 100%; background: radial-gradient(ellipse 640px 520px at 520px 640px, rgba(248, 249, 251, .95) 0%, rgba(248, 249, 251, .55) 48%, rgba(248, 249, 251, 0) 100%); }
+.capa-swipe { left: 0; top: 1226px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 12px; font-family: var(--display); font-size: 28px; line-height: 40px; font-weight: 600; color: var(--navy); }
+.capa-swipe .swipe-icon { color: var(--navy); }
+
+/* Capa: seta depois do texto, para puxar o deslize */
+.swipe-icon { display: block; width: 34px; height: 34px; flex: none; color: var(--on-navy); }
+
+/* Nomes da visualização: não aparecem em página sozinha nem no export */
+.row-name { grid-column: 1 / -1; padding-top: 24px; font-family: var(--text); font-size: 96px; line-height: 116px; font-weight: 800; color: #f1f3f5; }
+.page-name { padding-bottom: 14px; font-family: var(--text); font-size: 72px; line-height: 86px; font-weight: 700; color: #e2cba4; }
+body.solo .row-name, body.solo .page-name { display: none; }
+
+/* Exportação: v2.html#1 a #8 mostra só aquele slide, em 1080x1350 */
+body.solo #deck { padding: 0; display: block; }
+body.solo .slide:not(.active) { display: none; }
+</style>
+</head>
+<body>
+<div id="deck">
+<div class="row-name">Português</div>
+<div class="cell"><div class="page-name">pt1</div>
+<section class="slide s2 p4 capa" lang="pt" data-slide="1">
+  <h1 class="headline" style="font-size:51px">Se tirássemos o nome do mostrador,<span style="font-size:86.5px">qual você escolheria?</span></h1>
+  <div class="anon l" style="left:-173.0px;top:181.6px;width:866.4px;clip-path:polygon(0 0,100% 0,100% 53%,72.5% 55%,70.5% 62.5%,68.4% 68.8%,67.1% 72.8%,65.6% 75.9%,62.3% 86.2%,60.4% 91.4%,0 91.4%)"><img src="assets/a.png" alt="A"><i class="bar" style="left:44.7%;top:39.5%;width:9.3%;height:4.0%"></i><i class="bar" style="left:46.0%;top:56.1%;width:6.5%;height:1.9%"></i><i class="bar" style="left:44.2%;top:58.2%;width:11.2%;height:1.7%"></i></div>
+  <div class="anon o" style="left:413.2px;top:285.8px;width:770.7px"><img src="assets/b.png" alt="B"><i class="bar" style="left:39.6%;top:32.3%;width:14.0%;height:3.8%"></i><i class="bar" style="left:53.6%;top:32.3%;width:1.3%;height:3.3%"></i><i class="bar" style="left:54.9%;top:32.3%;width:1.4%;height:1.9%"></i></div>
+  <div class="pick l">A</div>
+  <div class="pick o">B</div>
+  <div class="capa-swipe"><span>Deslize e descubra quem é quem.</span><svg class="swipe-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 12H20M14 18L20 12L14 6"/></svg></div>
+</section>
+</div>
+<div class="cell"><div class="page-name">pt2</div>
+<section class="slide ed ed-reveal" lang="pt" data-slide="2">
+  <div class="ed-half top"></div>
+  <div class="ed-half bottom"></div>
+  <h1 class="ed-title">Os dois são de aço e automáticos.<span>Por que um custa US$ 31.050 a mais?</span></h1>
+  <img class="ed-lying" src="assets/a.png" alt="Tissot PRX 40 mm" style="left:-235.0px;top:-69.3px;width:1083.0px;transform-origin:535.0px 539.3px;transform:rotate(-90deg);clip-path:polygon(0 0,100% 0,100% 53%,72.5% 55%,70.5% 62.5%,68.4% 68.8%,67.1% 72.8%,65.6% 75.9%,62.3% 86.2%,60.4% 91.4%,0 91.4%)">
+  <img class="ed-lying" src="assets/b.png" alt="Audemars Piguet Royal Oak 41 mm" style="left:321.4px;top:631.1px;width:963.3px;transform-origin:458.6px 408.9px;transform:rotate(90deg)">
+  <div class="ed-id a"><div class="brand">TISSOT</div><div class="model">PRX 40 mm</div><div class="ref">Ref. T137.407.11.041.00</div></div>
+  <div class="ed-facts a">40 mm • US$ 850</div>
+  <div class="ed-id b"><div class="brand">AUDEMARS PIGUET</div><div class="model">Royal Oak 41 mm</div><div class="ref">Ref. 15510ST.OO.1320ST.06</div></div>
+  <div class="ed-facts b">41 mm • US$ 31.900</div>
+</section>
+</div>
+<div class="cell"><div class="page-name">pt3</div>
+<section class="slide s2" lang="pt" data-slide="3">
+  <h1 class="headline">O que os US$ 31.050 pagam?</h1>
+  <div class="subtitle">Tissot PRX 40 mm vs Audemars Piguet Royal Oak 41 mm</div>
+  <img class="watch l" src="assets/a.png" alt="Tissot PRX 40 mm" style="left:94.6px;top:130.7px;width:476.5px;clip-path:polygon(0 0,100% 0,100% 53%,72.5% 55%,70.5% 62.5%,68.4% 68.8%,67.1% 72.8%,65.6% 75.9%,62.3% 86.2%,60.4% 91.4%,0 91.4%)">
+  <img class="watch o" src="assets/b.png" alt="Audemars Piguet Royal Oak 41 mm" style="left:548.2px;top:188.1px;width:423.9px">
+  <div class="name l">TISSOT</div>
+  <div class="name o">AUDEMARS PIGUET</div>
+  <h2 class="section" style="top:668px">Em comum</h2>
+  <div class="chips"><div class="chip">Caixa de aço</div><div class="chip">Automático</div><div class="chip">Cristal de safira</div><div class="chip">Mostra a data</div></div>
+  <h2 class="section" style="top:786px">Principais diferenças</h2>
+  <div class="diffs-card"><table class="diffs" style="--linha:55px"><colgroup><col class="name-col"><col><col></colgroup>
+    <thead><tr><th></th><th>Tissot</th><th>Audemars Piguet</th></tr></thead>
+    <tbody><tr><th>Preço</th><td class="win">US$ 850</td><td>US$ 31.900</td></tr><tr><th>Resistência à água</th><td class="win">100 m</td><td>50 m</td></tr><tr><th>Reserva de marcha</th><td class="win">80 horas</td><td>70 horas</td></tr><tr><th>Diâmetro</th><td>40 mm</td><td>41 mm</td></tr><tr><th>Espessura</th><td>10,93 mm</td><td class="win">10,5 mm</td></tr><tr><th>Garantia</th><td>2 anos</td><td class="win">Até 5 anos</td></tr></tbody></table></div>
+  <div class="band"><div class="closing">Mais barato, com mais reserva de marcha e mais resistência à água. Qual você levaria?</div></div>
+</section>
+</div>
+<div class="cell"><div class="page-name">pt4</div>
+<section class="slide dark p3d" lang="pt" data-slide="4">
+  <h1 class="dhead">Aqui a conta fica estranha.</h1>
+  <div class="dsub">Por mais de 37 vezes o preço, a resistência à água é a metade.</div>
+  <div class="strip s-l"><img src="assets/a.png" alt="100 m" style="width:953.0px;height:953.0px;left:-200.8px;top:-274.6px;clip-path:polygon(0 0,100% 0,100% 53%,72.5% 55%,70.5% 62.5%,68.4% 68.8%,67.1% 72.8%,65.6% 75.9%,62.3% 86.2%,60.4% 91.4%,0 91.4%)"></div>
+  <div class="dmat s-l"><b>100 m</b><span>Resistência à água do mais barato.</span></div>
+  <div class="strip s-o"><img src="assets/b.png" alt="50 m" style="width:827.1px;height:827.1px;left:416.3px;top:-151.1px"></div>
+  <div class="dmat s-o"><b>50 m</b><span>Resistência à água do mais caro.</span></div>
+  <h2 class="dsection">O que a Audemars Piguet tem a mais</h2>
+  <div class="dextras"><div class="extra"><b>Chegou primeiro</b><span>O primeiro Royal Oak é de 1972. O formato do PRX, de 1978.</span></div><div class="extra"><b>Até 5 anos de garantia</b><span>São 2 anos, e mais 3 com cadastro. Na Tissot, são 2.</span></div><div class="extra"><b>Mais fino</b><span>10,5 mm contra 10,93 mm.</span></div></div>
+  <div class="dclosing">E agora, quanto vale essa diferença?</div>
+</section>
+</div>
+<div class="cell"><div class="page-name">pt5</div>
+<section class="slide ed ed-cta" lang="pt" data-slide="5">
+  <h1 class="cta-title">E aí, depois de descobrir tudo isso,<span>a sua opinião ainda continua a mesma?</span></h1>
+  <img class="cta-watch" src="assets/a.png" alt="Tissot PRX 40 mm" style="left:-117.6px;top:189.2px;width:804.9px;clip-path:polygon(0 0,100% 0,100% 53%,72.5% 55%,70.5% 62.5%,68.4% 68.8%,67.1% 72.8%,65.6% 75.9%,62.3% 86.2%,60.4% 91.4%,0 91.4%)">
+  <img class="cta-watch" src="assets/b.png" alt="Audemars Piguet Royal Oak 41 mm" style="left:459.2px;top:286.1px;width:716.0px">
+  <div class="cta-name a"><b style="font-size:32px">A</b><strong style="font-size:40px">TISSOT</strong></div>
+  <div class="cta-name b"><b style="font-size:32px">B</b><strong style="font-size:40px">AUDEMARS PIGUET</strong></div>
+  <div class="cta-button"><svg class="cta-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C10.4003 22 8.88867 21.6239 7.54785 20.9561C7.19153 20.7786 6.78396 20.7204 6.39941 20.8232L4.17383 21.4189C3.20749 21.6775 2.3225 20.7925 2.58105 19.8262L3.17676 17.6006C3.27965 17.216 3.22142 16.8085 3.04395 16.4521C2.37612 15.1113 2 13.5997 2 12C2 6.47715 6.47715 2 12 2ZM7.99121 11C7.43893 11 6.99121 11.4477 6.99121 12C6.99121 12.5523 7.43893 13 7.99121 13C8.54327 12.9997 8.99121 12.5521 8.99121 12C8.99121 11.4479 8.54327 11.0003 7.99121 11ZM12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11ZM16.0088 11C15.4565 11 15.0088 11.4477 15.0088 12C15.0088 12.5523 15.4565 13 16.0088 13C16.5611 13 17.0088 12.5523 17.0088 12C17.0088 11.4477 16.5611 11 16.0088 11Z" clip-rule="evenodd"/></svg><span>Comenta aqui: A ou B</span></div>
+</section>
+</div>
+<div class="row-name">English</div>
+<div class="cell"><div class="page-name">en1</div>
+<section class="slide s2 p4 capa" lang="en" data-slide="6">
+  <h1 class="headline" style="font-size:57.9px">If we took the name off the dial,<span style="font-size:72.1px">which would you choose?</span></h1>
+  <div class="anon l" style="left:-173.0px;top:181.6px;width:866.4px;clip-path:polygon(0 0,100% 0,100% 53%,72.5% 55%,70.5% 62.5%,68.4% 68.8%,67.1% 72.8%,65.6% 75.9%,62.3% 86.2%,60.4% 91.4%,0 91.4%)"><img src="assets/a.png" alt="A"><i class="bar" style="left:44.7%;top:39.5%;width:9.3%;height:4.0%"></i><i class="bar" style="left:46.0%;top:56.1%;width:6.5%;height:1.9%"></i><i class="bar" style="left:44.2%;top:58.2%;width:11.2%;height:1.7%"></i></div>
+  <div class="anon o" style="left:413.2px;top:285.8px;width:770.7px"><img src="assets/b.png" alt="B"><i class="bar" style="left:39.6%;top:32.3%;width:14.0%;height:3.8%"></i><i class="bar" style="left:53.6%;top:32.3%;width:1.3%;height:3.3%"></i><i class="bar" style="left:54.9%;top:32.3%;width:1.4%;height:1.9%"></i></div>
+  <div class="pick l">A</div>
+  <div class="pick o">B</div>
+  <div class="capa-swipe"><span>Swipe to find out which is which.</span><svg class="swipe-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 12H20M14 18L20 12L14 6"/></svg></div>
+</section>
+</div>
+<div class="cell"><div class="page-name">en2</div>
+<section class="slide ed ed-reveal" lang="en" data-slide="7">
+  <div class="ed-half top"></div>
+  <div class="ed-half bottom"></div>
+  <h1 class="ed-title">Both are steel and automatic.<span>Why does one cost $31,050 more?</span></h1>
+  <img class="ed-lying" src="assets/a.png" alt="Tissot PRX 40 mm" style="left:-235.0px;top:-69.3px;width:1083.0px;transform-origin:535.0px 539.3px;transform:rotate(-90deg);clip-path:polygon(0 0,100% 0,100% 53%,72.5% 55%,70.5% 62.5%,68.4% 68.8%,67.1% 72.8%,65.6% 75.9%,62.3% 86.2%,60.4% 91.4%,0 91.4%)">
+  <img class="ed-lying" src="assets/b.png" alt="Audemars Piguet Royal Oak 41 mm" style="left:321.4px;top:631.1px;width:963.3px;transform-origin:458.6px 408.9px;transform:rotate(90deg)">
+  <div class="ed-id a"><div class="brand">TISSOT</div><div class="model">PRX 40 mm</div><div class="ref">Ref. T137.407.11.041.00</div></div>
+  <div class="ed-facts a">40 mm • $850</div>
+  <div class="ed-id b"><div class="brand">AUDEMARS PIGUET</div><div class="model">Royal Oak 41 mm</div><div class="ref">Ref. 15510ST.OO.1320ST.06</div></div>
+  <div class="ed-facts b">41 mm • $31,900</div>
+</section>
+</div>
+<div class="cell"><div class="page-name">en3</div>
+<section class="slide s2" lang="en" data-slide="8">
+  <h1 class="headline">What does $31,050 buy?</h1>
+  <div class="subtitle">Tissot PRX 40 mm vs Audemars Piguet Royal Oak 41 mm</div>
+  <img class="watch l" src="assets/a.png" alt="Tissot PRX 40 mm" style="left:94.6px;top:130.7px;width:476.5px;clip-path:polygon(0 0,100% 0,100% 53%,72.5% 55%,70.5% 62.5%,68.4% 68.8%,67.1% 72.8%,65.6% 75.9%,62.3% 86.2%,60.4% 91.4%,0 91.4%)">
+  <img class="watch o" src="assets/b.png" alt="Audemars Piguet Royal Oak 41 mm" style="left:548.2px;top:188.1px;width:423.9px">
+  <div class="name l">TISSOT</div>
+  <div class="name o">AUDEMARS PIGUET</div>
+  <h2 class="section" style="top:668px">In common</h2>
+  <div class="chips"><div class="chip">Steel case</div><div class="chip">Automatic</div><div class="chip">Sapphire crystal</div><div class="chip">Shows the date</div></div>
+  <h2 class="section" style="top:786px">Key differences</h2>
+  <div class="diffs-card"><table class="diffs" style="--linha:55px"><colgroup><col class="name-col"><col><col></colgroup>
+    <thead><tr><th></th><th>Tissot</th><th>Audemars Piguet</th></tr></thead>
+    <tbody><tr><th>Price</th><td class="win">$850</td><td>$31,900</td></tr><tr><th>Water resistance</th><td class="win">100 m</td><td>50 m</td></tr><tr><th>Power reserve</th><td class="win">80 hours</td><td>70 hours</td></tr><tr><th>Diameter</th><td>40 mm</td><td>41 mm</td></tr><tr><th>Thickness</th><td>10.93 mm</td><td class="win">10.5 mm</td></tr><tr><th>Warranty</th><td>2 years</td><td class="win">Up to 5 years</td></tr></tbody></table></div>
+  <div class="band"><div class="closing">Cheaper, with more power reserve and more water resistance. Which would you buy?</div></div>
+</section>
+</div>
+<div class="cell"><div class="page-name">en4</div>
+<section class="slide dark p3d" lang="en" data-slide="9">
+  <h1 class="dhead">This is where it gets weird.</h1>
+  <div class="dsub">At more than 37 times the price, it has half the water resistance.</div>
+  <div class="strip s-l"><img src="assets/a.png" alt="100 m" style="width:953.0px;height:953.0px;left:-200.8px;top:-274.6px;clip-path:polygon(0 0,100% 0,100% 53%,72.5% 55%,70.5% 62.5%,68.4% 68.8%,67.1% 72.8%,65.6% 75.9%,62.3% 86.2%,60.4% 91.4%,0 91.4%)"></div>
+  <div class="dmat s-l"><b>100 m</b><span>Water resistance on the cheaper one.</span></div>
+  <div class="strip s-o"><img src="assets/b.png" alt="50 m" style="width:827.1px;height:827.1px;left:416.3px;top:-151.1px"></div>
+  <div class="dmat s-o"><b>50 m</b><span>Water resistance on the pricier one.</span></div>
+  <h2 class="dsection">What the Audemars Piguet adds</h2>
+  <div class="dextras"><div class="extra"><b>It came first</b><span>The first Royal Oak dates to 1972. The PRX case shape, to 1978.</span></div><div class="extra"><b>Up to 5-year warranty</b><span>2 years, plus 3 if you register. Tissot offers 2.</span></div><div class="extra"><b>Thinner</b><span>10.5 mm vs 10.93 mm.</span></div></div>
+  <div class="dclosing">So, how much is that difference worth?</div>
+</section>
+</div>
+<div class="cell"><div class="page-name">en5</div>
+<section class="slide ed ed-cta" lang="en" data-slide="10">
+  <h1 class="cta-title">So, after finding out all of this,<span>is your opinion still the same?</span></h1>
+  <img class="cta-watch" src="assets/a.png" alt="Tissot PRX 40 mm" style="left:-117.6px;top:189.2px;width:804.9px;clip-path:polygon(0 0,100% 0,100% 53%,72.5% 55%,70.5% 62.5%,68.4% 68.8%,67.1% 72.8%,65.6% 75.9%,62.3% 86.2%,60.4% 91.4%,0 91.4%)">
+  <img class="cta-watch" src="assets/b.png" alt="Audemars Piguet Royal Oak 41 mm" style="left:459.2px;top:286.1px;width:716.0px">
+  <div class="cta-name a"><b style="font-size:32px">A</b><strong style="font-size:40px">TISSOT</strong></div>
+  <div class="cta-name b"><b style="font-size:32px">B</b><strong style="font-size:40px">AUDEMARS PIGUET</strong></div>
+  <div class="cta-button"><svg class="cta-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C10.4003 22 8.88867 21.6239 7.54785 20.9561C7.19153 20.7786 6.78396 20.7204 6.39941 20.8232L4.17383 21.4189C3.20749 21.6775 2.3225 20.7925 2.58105 19.8262L3.17676 17.6006C3.27965 17.216 3.22142 16.8085 3.04395 16.4521C2.37612 15.1113 2 13.5997 2 12C2 6.47715 6.47715 2 12 2ZM7.99121 11C7.43893 11 6.99121 11.4477 6.99121 12C6.99121 12.5523 7.43893 13 7.99121 13C8.54327 12.9997 8.99121 12.5521 8.99121 12C8.99121 11.4479 8.54327 11.0003 7.99121 11ZM12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11ZM16.0088 11C15.4565 11 15.0088 11.4477 15.0088 12C15.0088 12.5523 15.4565 13 16.0088 13C16.5611 13 17.0088 12.5523 17.0088 12C17.0088 11.4477 16.5611 11 16.0088 11Z" clip-rule="evenodd"/></svg><span>Comment here: A or B</span></div>
+</section>
+</div>
+</div>
+<script>
+  var deck = document.getElementById('deck');
+  function layout() {
+    var n = location.hash.replace('#', '');
+    var solo = /^([1-9]|10)$/.test(n);
+    document.body.classList.toggle('solo', solo);
+    document.querySelectorAll('.slide').forEach(function (s) {
+      s.classList.toggle('active', s.dataset.slide === n);
+    });
+    deck.style.zoom = solo ? 1 : Math.min(innerWidth / (5 * 1080 + 4 * 32 + 64), 1);
+  }
+  addEventListener('resize', layout);
+  addEventListener('hashchange', layout);
+  layout();
+</script>
+</body>
+</html>
